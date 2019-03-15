@@ -15,4 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', 'SampleController@index');
+//Route::get('/hello', 'SampleController@index');
+
+Route::get('/hello','SampleController@index',function(){
+    $user_data = DB::select('select * from user');
+  });
+
